@@ -35,8 +35,6 @@ class Point():
         length = len(cluster)
         new = [self] + self.cluster
         cluster = cluster + new
-        #for item in cluster:
-        #    print(item.point)
         cluster = list(set(cluster))
         if len(cluster) == length:
             return cluster
