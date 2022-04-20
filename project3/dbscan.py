@@ -31,26 +31,23 @@ class Point():
         self.label =  "noise"
         self.cluster = []
 
-    def get_cluster(self, cluster = []):
+    def get_cluster(self, cluster = [], loop = 0):
         length = len(cluster)
-        new = []
-        new.append(self)
-        new.append(self.cluster)
-        cluster.append(self)
-        cluster.append(self.cluster)
-        print(len(cluster))
+        new = [self] + self.cluster
+        cluster = cluster + new
+        #for item in cluster:
+        #    print(item.point)
         cluster = list(set(cluster))
         if len(cluster) == length:
             return cluster
         for item in new:
-            cluster = get_cluster(cluster)
+            cluster = item.get_cluster(cluster = cluster, loop = loop+1)
         return cluster
 
 
 def dbscan(matrix, minpts = 5, e = 10000):
     points = [Point(tuple(matrix[row,:])) for row in range(len(matrix))]
     for item in points:
-        #print(item.point)
         for other in points:
             if within_neighborhood(item.point, other.point, minpts):
                 item.cluster.append(other)
@@ -64,7 +61,8 @@ def dbscan(matrix, minpts = 5, e = 10000):
                 if other.label == "core":
                     item.label = "border"
                     break
-    return [point.get_cluster() for point in points]
+    output =  list(set([tuple(point.get_cluster()) for point in points]))
+    return [list(item) for item in output]
             
 
 #Testing Space
@@ -72,6 +70,5 @@ D, labels = make_blobs(n_samples=500, centers=3, cluster_std=.3, random_state=0)
 
 D.shape
 
-scan = dbscan(D, 6)
-for item in scan:
-    print(item)
+scan = dbscan(D, minpts = 5)
+print(len(scan))
