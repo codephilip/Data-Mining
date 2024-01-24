@@ -1,6 +1,5 @@
 # CSCI-347-Data-Mining
 
-# CSCI 347 Project 1
 ## Philip Gehde, Moiyad Alfawwar
 ## Part 1: Write the Introduction
 For our Project 1, we choose the Statlog data set, which is a database for heart disease. This dataset has been cited in several research papers in the datascience field including: Diversity in Neural Network Ensembles (Gavin Brown. The University of Birmingham. 2004.), Overcoming the Myopia of Inductive Learning Algorithms with RELIEFF (Igor Kononenko and Edvard Simec and Marko Robnik-Sikonja), Unanimous Voting using Support Vector Machines (Elena Smirnova and Ida G. Sprinkhuizen-Kuyper and I. Nalbantis and b. ERIM and Universiteit Rotterdam, IKAT, Universiteit Maastricht), Dissertation Towards Understanding Stacking Studies of a General Ensemble Learning Scheme ausgefuhrt zum Zwecke der Erlangung des akademischen Grades eines Doktors der technischen Naturwissenschaften.
