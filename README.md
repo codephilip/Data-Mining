@@ -1,33 +1,83 @@
-# CSCI-347-Data-Mining
+# CSCI-347-Data-Mining: Advanced Data Science Techniques in Medical Diagnostics
 
-## Philip Gehde, Moiyad Alfawwar
-## Part 1: Introduction to Dataset
-For our Project 1, we choose the Statlog data set, which is a database for heart disease. This dataset has been cited in several research papers in the datascience field including: Diversity in Neural Network Ensembles (Gavin Brown. The University of Birmingham. 2004.), Overcoming the Myopia of Inductive Learning Algorithms with RELIEFF (Igor Kononenko and Edvard Simec and Marko Robnik-Sikonja), Unanimous Voting using Support Vector Machines (Elena Smirnova and Ida G. Sprinkhuizen-Kuyper and I. Nalbantis and b. ERIM and Universiteit Rotterdam, IKAT, Universiteit Maastricht), Dissertation Towards Understanding Stacking Studies of a General Ensemble Learning Scheme ausgefuhrt zum Zwecke der Erlangung des akademischen Grades eines Doktors der technischen Naturwissenschaften.
+## Team Members
 
-The dataset was uploaded by the University of California, Irvine, and is available at the UCI machine learning archive on their website for the Center for Machine Learning and Intelligent Systems at the following URL: https://archive.ics.uci.edu/ml/datasets/statlog+(heart)
+- **Philip Gehde**
+- **Moiyad Alfawwar**
 
-The Statlog dataset has 270 instances, with no missing values and 13 different attributes. Due to the fact that there are no missing values, there is no need for a plot to summarize the proportion of missing data as this is non-applicable for all 13 attributes.
+## Overview
 
-The 13 attributes (which have been extracted from a larger set of 75) include descriptive variables such as sex, and Chest pain type (4 values), however, these values were already label encoded. As such, we are left with the following attribute types: Real: 1,4,5,8,10,12 Ordered:11, Binary: 2,6,9 Nominal:7,3,13
+Welcome to our Data Science project repository for CSCI-347 Data Mining. This project focuses on applying various data science techniques and algorithms to medical diagnostic work, with a specific emphasis on heart disease prediction. Our work is inspired by the potential of machine learning to revolutionize medical diagnostics, making early detection and prevention of diseases like heart disease more accurate and accessible.
 
-Given that the categorical values were already label encoded, the choice (label-encoded vs one-hot-encoded) was made for us and we assume that the alphabetical ordering of label encoding will not prevent us from making medically relevant inferences from this data. In other words, we assume that the categorical value was ordered alphebetically as to represent the severity of the pain, for example, A-D. This assumption may give us trouble down the road, and should be further investigated.
+## Dataset
 
-If we were to work with categorical values for chest pain, one might suggest one-hot encoding as to prevent any issues that may arise if there is no obvious ordering, or ranking of our values, and rather solve this potential problem by represented each category as a binary vector. However, in order to avoid the pitfalls of multicollierity, it would be best to simply determine that categorical data is ranked appropriately and use label-encoding instead. Sex/Gender is binary, and so label-encoding can be considered appropriate.
+We utilize the **Statlog Heart Disease Dataset** from the UCI machine learning repository. This dataset is widely recognized in the data science field for its applications in diverse research studies. It contains 270 instances with 13 attributes and no missing values, making it an ideal candidate for our analysis.
 
-This dataset is fascinating to work with because of the potential for machine learning and neural networks to be applied in medical diagnostic work. My father had some heart issues recently, that could have been avoided/treated appropriately if the data had been interpreted by a machine, and not a doctor who was later repeatedly sued succesfully for negligent practice. My girlfriend, who is a nurse, reports routinely on poor diagnostic work by colleagues (don't tell anybody). A large proportion of her work day is spent collecting and documenting data, and therein lies the real challenge. How do we gather the appropriate data for the correct diagnosis, to establish better preventative care, and better diagnostics in medicine with the help of machine learning? I believe this question to be a fundamental one in data mining. As good staticians, we have to evaluate the quality and potential biases of the data being used, determining what data is useful, how to gather it, and how to clean it.
+### Attributes
 
-Medical Diagnostic work is a highly complex analysis, because we are evaluating a system that is highly complex. It is difficult to establish causation in such systems but we are rather working in the realm of probabilities, where computers can shine. Our 13 attributes have been extracted from 75, which leads me to believe that we are working with a very clean data set. Given the complex nature of the human body I believe that none of them should be ommited. The attributes are listed below, and they all seem highly relevant to the diagnostic work ahead.
+The dataset features the following attributes, crucial for heart disease diagnosis:
 
-1. age
-2. sex
-3. chest pain type (4 values)
-4. resting blood pressure
-5. serum cholestoral in mg/dl
-6. fasting blood sugar > 120 mg/dl
-7. resting electrocardiographic results (values 0,1,2)
-8. maximum heart rate achieved
-9. exercise induced angina
-10. oldpeak = ST depression induced by exercise relative to rest
-11. the slope of the peak exercise ST segment
-12. number of major vessels (0-3) colored by flourosopy
-13. thal: 3 = normal; 6 = fixed defect; 7 = reversable defect
+- Age
+- Sex (binary: male or female)
+- Chest Pain Type (4 values, label-encoded)
+- Resting Blood Pressure
+- Serum Cholesterol in mg/dl
+- Fasting Blood Sugar > 120 mg/dl (binary)
+- Resting Electrocardiographic Results (0,1,2)
+- Maximum Heart Rate Achieved
+- Exercise Induced Angina (binary)
+- Oldpeak (ST depression induced by exercise relative to rest)
+- The Slope of the Peak Exercise ST Segment
+- Number of Major Vessels (0-3) Colored by Flourosopy
+- Thal (3 = normal; 6 = fixed defect; 7 = reversible defect)
+
+## Project Structure
+
+This repository contains Jupyter Notebooks covering the following key topics:
+
+- **Graph Analysis**: Exploration of data relationships and patterns.
+- **Linear Transformation**: Application of linear algebra techniques to optimize data representation.
+- **K-Means Clustering**: Unsupervised learning method to identify data clusters.
+- Additional notebooks will explore various data preprocessing, analysis, and machine learning techniques relevant to our project's goal.
+
+## Objectives
+
+Our project aims to:
+
+1. **Evaluate and Clean the Dataset**: Assess the quality, potential biases, and applicability of the dataset for heart disease diagnostics.
+2. **Apply Data Mining Techniques**: Utilize various algorithms to uncover patterns and insights that could inform medical diagnostics.
+3. **Enhance Medical Diagnostic Work**: Explore how machine learning can improve diagnostic accuracy, focusing on heart disease.
+
+## Motivation
+
+Our personal experiences and observations in the medical field highlight the urgent need for improved diagnostics. This project is not just an academic exercise; it's a step toward leveraging data science for real-world medical advancements.
+
+## Usage
+
+To get started with our notebooks:
+
+1. Clone this repository to your local machine.
+2. Ensure you have Jupyter Notebook installed, or use Google Colab for an online alternative.
+3. Open the notebooks and follow the instructions within to replicate our analyses.
+
+## Dependencies
+
+- Python 3.x
+- Jupyter Notebook
+- Libraries: NumPy, pandas, matplotlib, scikit-learn, etc. (A full list of dependencies is available in the `requirements.txt` file.)
+
+## Contributing
+
+We welcome contributions from the data science community. Whether it's improving the code, suggesting new analysis techniques, or discussing the implications of our findings, your input is valuable.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+Our heartfelt gratitude goes to the researchers and contributors of the Statlog Heart Disease Dataset at the UCI Machine Learning Repository. Their work provides the foundation for our project and many others in the field of medical diagnostics.
+
+---
+
+Join us in this exploratory journey through data science to make a tangible impact on medical diagnostics. Together, we can push the boundaries of what's possible in healthcare through the power of data mining.
