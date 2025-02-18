@@ -3,7 +3,7 @@
 ## Team Members
 
 - **Philip Gehde**
-- **Moiyad Alfawwar**
+- **Moayad Alfawwar**
 
 ## Overview
 
